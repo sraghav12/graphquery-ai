@@ -35,7 +35,7 @@ git commit -m "Initial commit: GraphQuery AI with Neo4j & LangChain"
 Replace `<YOUR_USERNAME>` with your GitHub username:
 ```bash
 # Add the remote repository
-git remote add origin https://github.com/<YOUR_USERNAME>/graphquery-ai.git
+git remote add origin https://github.com/sraghav12/graphquery-ai.git
 
 # Push to the main branch
 git branch -M main
