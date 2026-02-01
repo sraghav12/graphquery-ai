@@ -1,0 +1,100 @@
+{
+    "basic_queries": [
+        {
+            "category": "Count Queries",
+            "examples": [
+                "How many movies are in the database?",
+                "How many actors are there?",
+                "Count the number of directors",
+                "How many genres exist?"
+            ]
+        },
+        {
+            "category": "Lookup Queries",
+            "examples": [
+                "Which actors played in Casino?",
+                "Who directed The Matrix?",
+                "Find movies released in 1995",
+                "List all Action movies"
+            ]
+        },
+        {
+            "category": "Relationship Queries",
+            "examples": [
+                "How many movies has Tom Hanks acted in?",
+                "Which directors have worked with Robert De Niro?",
+                "List all genres of Schindler's List",
+                "Find co-stars of Brad Pitt"
+            ]
+        }
+    ],
+    "advanced_queries": [
+        {
+            "category": "Multi-hop Queries",
+            "examples": [
+                "Which actors have worked in both Comedy and Action genres?",
+                "Find directors who also acted in their movies",
+                "Which actors appeared in more than 3 movies?",
+                "Movies with the same director and actor"
+            ]
+        },
+        {
+            "category": "Aggregation Queries",
+            "examples": [
+                "What is the average IMDB rating?",
+                "Find the highest rated movies",
+                "Which genre has the most movies?",
+                "Top 5 most prolific actors"
+            ]
+        },
+        {
+            "category": "Pattern Queries",
+            "examples": [
+                "Find movie chains where actors worked together",
+                "Shortest path between two actors",
+                "Movies with 3 or more top actors",
+                "Directors with most collaborations"
+            ]
+        }
+    ],
+    "test_cases": [
+        {
+            "question": "How many movies are there?",
+            "expected_pattern": "MATCH (m:Movie) RETURN count(m)",
+            "description": "Simple count query"
+        },
+        {
+            "question": "Which actors played in Casino?",
+            "expected_pattern": "MATCH (m:Movie {title: 'Casino'})<-[:ACTED_IN]-(a:Person)",
+            "description": "Property filter with relationship"
+        },
+        {
+            "question": "How many movies has Tom Hanks acted in?",
+            "expected_pattern": "MATCH (a:Person {name: 'Tom Hanks'})-[:ACTED_IN]->(m:Movie) RETURN count(m)",
+            "description": "Count with specific entity"
+        }
+    ],
+    "edge_cases": [
+        {
+            "question": "Movies with apostrophes in title",
+            "example": "Find Schindler's List",
+            "note": "Tests escape handling"
+        },
+        {
+            "question": "Case sensitivity",
+            "example": "find movies by STEVEN SPIELBERG",
+            "note": "Tests case handling"
+        },
+        {
+            "question": "Ambiguous queries",
+            "example": "Show me action",
+            "note": "Tests disambiguation"
+        }
+    ],
+    "query_templates": {
+        "count": "MATCH (n:NodeType) RETURN count(n) AS count",
+        "find_by_property": "MATCH (n:NodeType {property: 'value'}) RETURN n",
+        "relationship": "MATCH (a:NodeA)-[:RELATIONSHIP]->(b:NodeB) RETURN a, b",
+        "aggregation": "MATCH (n:NodeType) RETURN property, count(*) ORDER BY count(*) DESC"
+    }
+}

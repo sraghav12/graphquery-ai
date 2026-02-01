@@ -1,0 +1,30 @@
+# Core dependencies
+streamlit>=1.31.0
+python-dotenv>=1.0.0
+
+# LangChain and Neo4j
+langchain>=0.1.0
+langchain-neo4j>=0.8.0
+langchain-groq>=0.0.1
+langchain-core>=0.1.0
+neo4j>=5.28.0
+
+# API clients
+groq>=0.4.0
+
+# Data processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Visualization (optional)
+plotly>=5.18.0
+matplotlib>=3.8.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+
+# Code quality
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.7.0
