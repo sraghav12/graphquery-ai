@@ -1,6 +1,6 @@
 # 🔍 Natural Language to Neo4j Cypher Query Generator
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://your-app-url.streamlit.app)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://graphquery-aitabreadme-ov-file-agli4bhznjjcjeawqftnya.streamlit.app/)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![LangChain](https://img.shields.io/badge/LangChain-0.1+-green.svg)](https://github.com/langchain-ai/langchain)
@@ -56,7 +56,7 @@ This project demonstrates an intelligent **Text-to-Cypher** system that converts
 
 ## 🚀 Live Demo
 
-**[Try the Live App →](https://your-app-url.streamlit.app)**
+**[Try the Live App →](https://graphquery-aitabreadme-ov-file-agli4bhznjjcjeawqftnya.streamlit.app/)**
 
 ![App Screenshot](assets/screenshot.png)
 
@@ -334,4 +334,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **⭐ If you found this project helpful, please consider giving it a star!**
 
-Built with ❤️ by a CMU Graduate Student | [View Live Demo](https://your-app-url.streamlit.app)
+Built with ❤️ by a CMU Graduate Student | [View Live Demo](https://graphquery-aitabreadme-ov-file-agli4bhznjjcjeawqftnya.streamlit.app/)

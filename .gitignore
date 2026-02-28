@@ -67,3 +67,8 @@ htmlcov/
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+.env
+__pycache__/
+.DS_Store
+venv/
+.streamlit/secrets.toml
