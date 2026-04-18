@@ -8,7 +8,8 @@ import traceback
 import time
 from datetime import datetime
 
-from config import setup_environment, get_llm
+import os
+from config import setup_environment, get_llm, _get_secret
 
 st.set_page_config(
     page_title="GraphQuery AI",
@@ -91,7 +92,6 @@ def init_session_state():
 
 # ── Database Connection ───────────────────────────────────────────────────────
 
-@st.cache_resource
 def initialize_connection():
     try:
         from langchain_neo4j import Neo4jGraph
@@ -100,7 +100,8 @@ def initialize_connection():
         neo4j_uri, neo4j_username, neo4j_password, _ = setup_environment()
         llm = get_llm()
 
-        graph = Neo4jGraph(url=neo4j_uri, username=neo4j_username, password=neo4j_password)
+        neo4j_database = _get_secret("NEO4J_DATABASE") or os.getenv("NEO4J_DATABASE") or "neo4j"
+        graph = Neo4jGraph(url=neo4j_uri, username=neo4j_username, password=neo4j_password, database=neo4j_database)
         chain = create_qa_chain(graph, llm)
         return graph, chain
     except Exception as e:
